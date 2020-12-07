@@ -39,7 +39,7 @@ function OrderScreen(props) {
           {order.shipping.postalCode}, {order.shipping.country},
           </div>
             <div>
-              {order.isDelivered ? "Delivered at " + order.deliveredAt : "Not Delivered."}
+              {/*order.isDelivered ? "Delivered at " + order.deliveredAt : "Not Delivered."*/}
             </div>
           </div>
           <div>
@@ -97,11 +97,14 @@ function OrderScreen(props) {
         <div className="placeorder-action">
           <ul>
             <li className="placeorder-actions-payment">
-              {loadingPay && <div>Finishing Payment...</div>}
+              {/*{loadingPay && <div>Finishing Payment...</div>}
               {!order.isPaid &&
                 <PaypalButton
                   amount={order.totalPrice}
                   onSuccess={handleSuccessPayment} />
+              }*/}
+              {!order.isPaid &&
+                <button onClick={handleSuccessPayment} style={{width:350, height: 40, backgroundColor:"orange", fontWeight:"bold", fontSize:"large", borderWidth:"thin", borderRadius: 10}}>Confirm Purchase</button>
               }
             </li>
             <li>
